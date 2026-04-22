@@ -40,7 +40,7 @@ The regularisation term is the normalised L1 norm of all gate values. Two proper
 
 The best model is selected by highest test accuracy (54.1% at λ=0.00010), which also gives the most interpretable gate distribution at 58.5% sparsity.
 
-![Gate Value Distribution]('/distribution.png')
+![Gate Value Distribution]('/Distribution.png')
 
 The histogram confirms the method is working as intended. The dominant spike at gate value ≈ 0 represents the pruned connections — gates driven to near-zero by the L1 penalty, contributing negligibly to the forward pass. The long tail extending toward 0.1 represents the surviving active connections the network identified as informative. The sharp boundary between the two populations, rather than a smooth unimodal distribution, is the signature of L1 regularisation — it forces a binary-like decision on each gate rather than uniformly shrinking all of them.
 
