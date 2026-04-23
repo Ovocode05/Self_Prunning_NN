@@ -119,11 +119,13 @@ def loss_fn(y_pred, y_true, gates, lam=1e-5):
     loss = F.cross_entropy(y_pred, y_true)
 
     gated_scores = 0
+    total_count = 0
     for gate in gates:
         #sum of all gate values after sigmoid
         gated_scores += torch.sum(torch.sigmoid(gate))
+        total_count += gate.numel()
 
-    return loss + (lam * gated_scores)
+    return loss + (lam * (gated_scores/total_count))
 
 def batch_acc(y_pred, y_true):
     preds = torch.argmax(y_pred, dim=1) 
