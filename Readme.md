@@ -43,7 +43,6 @@ The histogram confirms the method is working as intended. The dominant spike at 
 ## 4. Implementation Notes
 
 - **`PrunableLinear`** stores a `gate_scores` parameter of shape `(out_features, in_features)` matching `nn.Linear`'s weight convention. The forward pass computes `pruned_weight = weight × sigmoid(gate_scores)` and calls `F.linear`. Gradients flow through both tensors automatically.
-- **Normalised sparsity loss** divides the summed gate values by total gate count, making λ comparable across different architectures and layer widths.
 - **Early stopping** (patience=3 epochs) prevent over-training, which is particularly important at high λ where the sparsity loss can dominate and collapse accuracy if training continues past convergence.
 ---
 
