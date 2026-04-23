@@ -47,5 +47,25 @@ The histogram confirms the method is working as intended. The dominant spike at 
 - **Early stopping** (patience=3 epochs) prevent over-training, which is particularly important at high λ where the sparsity loss can dominate and collapse accuracy if training continues past convergence.
 ---
 
-## 5. References
+## 5. Setup 
+```bash
+git clone "https://github.com/Ovocode05/Self_Pruning_NN"
+cd Self_Pruning_NN
+```
+```bash
+pip install -r requirements.txt
+```
+> **Optional:** If you want to use a virtual environment first:
+> ```bash
+> python -m venv venv
+> source venv/bin/activate  # Mac/Linux
+> venv\Scripts\activate     # Windows
+> ```
+
+```bash
+python Script.py
+```
+CIFAR-10 will download automatically into `./data` on first run (~170 MB). 
+
+## 6. References
 - [Precomputed mean and std for CIFAR-10 dataset](https://www.kaggle.com/code/fanbyprinciple/cifar10-explanation-with-pytorch)
