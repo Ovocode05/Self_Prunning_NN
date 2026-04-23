@@ -53,7 +53,7 @@ git clone "https://github.com/Ovocode05/Self_Pruning_NN"
 cd Self_Pruning_NN
 ```
 ```bash
-pip install -r requirements.txt
+pip install -r requirement.txt
 ```
 > **Optional:** If you want to use a virtual environment first:
 > ```bash
